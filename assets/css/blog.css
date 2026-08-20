@@ -1,0 +1,14 @@
+/* 博客文章页样式（黑白 + 电光蓝，与全站一致） */
+.article { padding: 88px 0 120px; }
+.article .wrap { max-width: 720px; margin: 0 auto; }
+.article .meta { display: flex; align-items: center; gap: 14px; margin-bottom: 28px; font-size: 14px; color: var(--muted); }
+.article .tag { font-size: 13px; font-weight: 600; letter-spacing: 1.5px; color: var(--accent); }
+.article h1 { font-size: clamp(32px, 4.6vw, 46px); font-weight: 800; letter-spacing: -1.2px; line-height: 1.25; margin-bottom: 32px; }
+.article .lead { font-size: 19px; line-height: 1.85; color: var(--ink-2); margin-bottom: 40px; }
+.article h2 { font-size: 24px; font-weight: 700; letter-spacing: -0.4px; margin: 56px 0 18px; }
+.article p { font-size: 17px; line-height: 1.85; color: var(--ink); margin-bottom: 22px; }
+.article ul { margin: 0 0 22px; padding-left: 22px; }
+.article li { font-size: 17px; line-height: 1.85; margin-bottom: 10px; }
+.article blockquote { border-left: 3px solid var(--accent); padding: 4px 0 4px 20px; margin: 28px 0; color: var(--ink-2); font-size: 17px; line-height: 1.85; }
+.article .back { margin-top: 64px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; }
+@media (max-width: 768px) { .article { padding: 56px 0 80px; } }

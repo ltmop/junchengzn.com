@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>页面不存在 | 均成智能</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .notfound { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 120px 24px; }
+    .notfound .code { font-size: clamp(88px, 16vw, 160px); font-weight: 800; letter-spacing: -6px; line-height: 1; color: var(--accent); margin-bottom: 24px; font-variant-numeric: tabular-nums; }
+    .notfound h1 { font-size: clamp(26px, 4vw, 40px); font-weight: 800; letter-spacing: -1px; margin-bottom: 16px; }
+    .notfound p { color: var(--muted); max-width: 480px; line-height: 1.8; margin-bottom: 40px; }
+    .notfound .actions { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+  </style>
+</head>
+<body>
+  <main class="notfound">
+    <div class="code">404</div>
+    <h1>页面不存在，或已经搬家</h1>
+    <p>你访问的地址可能输入有误。可以回到首页，或直接联系我们——跨境电商、AI 转型、AI 学习，都欢迎来聊。</p>
+    <div class="actions">
+      <a href="/" class="btn btn-accent btn-lg">返回首页</a>
+      <a href="/#contact" class="btn btn-dark btn-lg">联系我们</a>
+    </div>
+  </main>
+</body>
+</html>

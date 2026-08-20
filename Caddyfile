@@ -1,0 +1,21 @@
+# 均成智能官网 · Caddy 配置
+# 用法（示例路径 /etc/caddy/Caddyfile）：
+#   1. 将站点文件放到 /var/www/junchengzn
+#   2. 复制本文件内容进 Caddyfile，然后 caddy reload
+# Caddy 会自动申请并续期 HTTPS 证书（需 80/443 端口在云防火墙放行）。
+
+# www 统一跳转到主域名（需先在 DNS 为 www 添加 A 记录指向 43.128.20.39）
+www.junchengzn.com {
+	redir https://junchengzn.com{uri} permanent
+}
+
+junchengzn.com {
+	root * /var/www/junchengzn
+	encode gzip zstd
+	file_server
+	header {
+		Strict-Transport-Security "max-age=31536000; includeSubDomains"
+		X-Content-Type-Options "nosniff"
+		Referrer-Policy "strict-origin-when-cross-origin"
+	}
+}

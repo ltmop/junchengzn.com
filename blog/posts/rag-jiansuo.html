@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAG 向量检索：让知识库开口说话 | 均成智能</title>
+  <meta name="description" content="700+ 篇笔记只能靠文件名搜索？均成智能的本地 RAG 方案：Obsidian + bge-small-zh + ChromaDB，知识库随问随答，商业数据不出本地。">
+  <link rel="canonical" href="https://junchengzn.com/blog/posts/rag-jiansuo.html">
+  <link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="../../assets/css/blog.css">
+</head>
+<body>
+  <header style="padding: 56px 0 24px; border-bottom: 1px solid var(--line);">
+    <div class="container" style="display: flex; align-items: center; justify-content: space-between;">
+      <a href="/" class="logo" aria-label="均成智能 - 返回官网首页">
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <rect width="32" height="32" rx="8" fill="#0066F5"/>
+          <text x="16" y="22.5" text-anchor="middle" font-family="'PingFang SC','Microsoft YaHei',sans-serif" font-size="17" font-weight="700" fill="#ffffff">均</text>
+        </svg>
+        <span>均成智能</span>
+      </a>
+      <a href="/blog/" class="btn btn-dark">返回洞察</a>
+    </div>
+  </header>
+
+  <main class="article">
+    <div class="container wrap">
+      <div class="meta"><span class="tag">技术前沿</span><span>2026.08</span></div>
+      <h1>RAG 向量检索：让知识库开口说话</h1>
+      <p class="lead">我们的知识库积累了 700+ 篇 Markdown 笔记：战略、运营、技术、组织、案例。但很长一段时间里，它们只能靠文件名和标签搜索——直到我们搭起了本地 RAG。</p>
+
+      <h2>痛点：知识躺在硬盘里，用不起来</h2>
+      <p>「我记得有篇关于 Shopee 佣金计算的文章，但不记得放哪了。」「新员工要上手，得手动翻几百篇笔记。」这是知识库最常见的死法：<strong>存了，但检索不到</strong>。</p>
+      <p>有了 RAG 之后，这两个问题变成了：直接用自然语言问「Shopee 佣金怎么算」，系统精确找到原文；新员工不用翻笔记，AI 自动检索并回答，且每条回答都带着原文出处。</p>
+
+      <h2>方案：轻量本地 RAG，数据不出本地</h2>
+      <p>我们没有上云服务，选的是全本地链路：</p>
+      <ul>
+        <li><strong>内容源</strong>：Obsidian 笔记库，按目录自动同步；</li>
+        <li><strong>向量化</strong>：bge-small-zh 中文向量模型，把每篇笔记转成向量，更新即重新向量化；</li>
+        <li><strong>存储</strong>：ChromaDB 本地向量库，零网络依赖，支持增量更新；</li>
+        <li><strong>检索</strong>：自然语言查询 → 语义检索 Top-K 笔记 → 重排序提升精度 → 返回原文片段 + 来源链接；</li>
+        <li><strong>入口</strong>：Claude Code MCP Server 和 Obsidian 插件侧边栏，两个入口共用同一套检索。</li>
+      </ul>
+      <p>为什么选本地而不是云：</p>
+      <ul>
+        <li><strong>隐私</strong>：商业数据不出本地，供应商价目、成本口径、战略文档全都在自己硬盘上；</li>
+        <li><strong>成本</strong>：零 API 费用，不按 token 计费；</li>
+        <li><strong>速度</strong>：本地检索延迟小于 100ms，不受网络影响；</li>
+        <li><strong>中文</strong>：bge-small-zh 是中文专用模型，比通用多语言模型更懂中文语义；</li>
+        <li><strong>离线</strong>：断网也能用。</li>
+      </ul>
+
+      <h2>选型清单（2026 年 8 月实测整理）</h2>
+      <p>RAG 框架按推荐优先级：LlamaIndex（最成熟、原生支持 Obsidian）、RAGFlow（国产、中文最佳）、Dify（低代码拖拽式）、FastGPT（专注知识库问答）、AnythingLLM（桌面一键式、极低门槛）、MaxKB（开箱即用）。向量数据库：ChromaDB 个人首选，Qdrant 中等规模，Milvus 企业级，LanceDB 最简单。</p>
+
+      <blockquote>知识数据是资产，功能实现是脚手架。沉淀知识和数据，永远不会出错。</blockquote>
+
+      <p>这句话是我们的北极星。RAG 的价值就在于：它让「资产」变得可检索、可问答、可传承——沉淀下来的每一篇笔记，都能在需要的那一刻开口说话。</p>
+
+      <div class="back">
+        <a href="/blog/" class="btn btn-dark">← 更多洞察</a>
+        <a href="/#contact" class="btn btn-accent">聊聊你们的知识库</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top: 1px solid var(--line); padding: 24px 0;">
+        <span>© 2026 均成智能跨境电商科技有限公司</span>
+        <span>让 AI 成为企业的增长引擎</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

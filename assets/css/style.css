@@ -242,6 +242,35 @@ a { color: inherit; }
   color: var(--muted);
 }
 
+/* ---------- 我们是谁 ---------- */
+.about-content {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: left;
+}
+.about-content p {
+  font-size: 18px;
+  line-height: 1.9;
+  color: var(--ink-2);
+  margin-bottom: 20px;
+}
+.about-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+.about-tags span {
+  font-size: 14px;
+  color: var(--ink-2);
+  background: var(--bg-soft);
+  padding: 8px 18px;
+  border-radius: 999px;
+}
+@media (max-width: 768px) {
+  .about-content { text-align: left; }
+}
+
 /* ---------- 四大业务卡片 ---------- */
 .services-grid {
   display: grid;

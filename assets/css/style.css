@@ -413,6 +413,7 @@ a { color: inherit; }
 @media (max-width: 1024px) {
   .products-grid { grid-template-columns: 1fr; }
 }
+.product.span2 { grid-column: 1 / -1; }
 @media (max-width: 768px) {
   .product { padding: 36px 24px 32px; }
 }

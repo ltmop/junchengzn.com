@@ -34,9 +34,11 @@ junchengzn.com/
 - ✅ **微信二维码**：`assets/img/wechat-qr.png`（玩Ai的阿杜），已上线。
 - ✅ **联系方式**：电话 `187 8911 6057`、邮箱 `2192727383@qq.com`（页脚 + CTA）。
 - ✅ **备案**：服务器为香港节点，免 ICP 备案，页脚不展示备案号。
+- ✅ **产品下载**：进销存桌面版 v0.3.2（`/download/general-inventory-setup-0.3.2.exe`，源文件在
+  `C:\Users\Administrator\Desktop\库存管理\AI智能管理进销存系统\release\`）+ 手机版 APK v1.0.0。
 - **内容更新**：数据板块（#stats）与洞察列表（#insights）随业务进展更新，
   数字直接改 `data-count` 属性即可，滚动计数会自动适配。
-- **部署同步**：改完叫 agent 用 SSH 面板同步，或手动：
+- **部署同步**：改完叫 agent 同步，或手动：
   `scp -r D:\junchengzn.com\* ubuntu@43.128.20.39:/var/www/junchengzn/`
 
 ## 本地预览

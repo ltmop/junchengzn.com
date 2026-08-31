@@ -91,20 +91,32 @@
     </section>
 
     <!-- ===== 我们是谁 ===== -->
-    <section id="about" class="section">
+    <section id="about" class="section section-soft">
       <div class="container">
-        <header class="section-head reveal">
-          <span class="eyebrow">我们是谁</span>
-          <h2>一家从渔具店走出来的<br>AI 初创公司</h2>
-        </header>
-        <div class="about-content reveal">
-          <p>均成智能 2026 年 5 月注册成立，核心团队三个人，外加 20 个各司其职的 AI 角色。我们不是从零开始的科技公司——线下的渔具门店已经开了 10 年，库存、供应链、行业经验都是真的。</p>
-          <p>现在我们在做的事很具体：把渔具生意做到虾皮越南站，同时给自己写工具（进销存、CEO 驾驶舱），一边做一边把方法沉淀成知识分享出去。</p>
-          <div class="about-tags">
-            <span>成立 2026.05</span>
-            <span>团队 3 人 + 20 AI 角色</span>
-            <span>门店 10 年 +</span>
-            <span>代码开源</span>
+        <div class="about-grid">
+          <div class="about-left reveal">
+            <span class="eyebrow">我们是谁</span>
+            <h2>一家从渔具店走出来的<br>AI 初创公司</h2>
+            <p>均成智能 2026 年 5 月注册成立，核心团队三个人，外加 20 个各司其职的 AI 角色。我们不是从零开始的科技公司——线下的渔具门店已经开了 10 年，库存、供应链、行业经验都是真的。</p>
+            <p>现在我们在做的事很具体：把渔具生意做到虾皮越南站，同时给自己写工具（进销存、CEO 驾驶舱），一边做一边把方法沉淀成知识分享出去。</p>
+          </div>
+          <div class="about-facts reveal d2">
+            <div class="fact">
+              <b>2026.05</b>
+              <span>公司成立</span>
+            </div>
+            <div class="fact">
+              <b>3 + 20</b>
+              <span>团队人 + AI 角色</span>
+            </div>
+            <div class="fact">
+              <b>10 年 +</b>
+              <span>线下渔具门店</span>
+            </div>
+            <div class="fact">
+              <b>开源</b>
+              <span>三款工具代码</span>
+            </div>
           </div>
         </div>
       </div>
@@ -181,78 +193,70 @@
         <header class="section-head reveal">
           <span class="eyebrow">产品</span>
           <h2>自己先用的工具</h2>
-          <p>两个工具都是我们自己店里、自己公司在用的东西——先自用，跑顺了，再分享出来。</p>
+          <p>三款工具都是我们自己店里、自己公司在用的东西——先自用，跑顺了，再分享。</p>
         </header>
         <div class="products-grid">
           <article class="product reveal d1">
-            <div class="product-top">
-              <h3>渔具进销存系统</h3>
-            <div class="product-top">
-              <h3>通用进销存系统</h3>
-              <span class="product-badge">桌面 v0.3.2 · 手机 v1.0.0</span>
+            <div class="product-shot" aria-hidden="true">
+              <div class="shot-bar"><i></i><i></i><i></i></div>
+              <div class="shot-window">
+                <div class="shot-field">🔍 搜索商品</div>
+                <div class="shot-rows">
+                  <span class="shot-row"><b>路亚竿</b><i>¥168</i></span>
+                  <span class="shot-row"><b>鱼线 3m</b><i>¥12</i></span>
+                  <span class="shot-row"><b>饵盒</b><i>¥25</i></span>
+                </div>
+                <div class="shot-total"><b>¥205</b></div>
+                <div class="shot-cta">开单</div>
+              </div>
             </div>
-            <p class="product-desc">从自己渔具店做起来的进销存，现在做成通用版：桌面 + 手机双端，扫码开单、AI 记账、库存预警。数据存在自己店里，不上云。</p>
-            <ul class="product-feats">
-              <li>桌面版：扫码开单 30 秒，利润报表、盘点一目了然</li>
-              <li>手机版：连店内 WiFi 即可开店（Android）</li>
-              <li>AI 语音 / 拍照记账，不用打字</li>
-              <li>临期预警、报损、配节、套装一口价</li>
-            </ul>
-            <div class="product-actions">
-              <a href="/download/general-inventory-setup-0.3.2.exe" class="btn btn-accent">
-                下载 Windows 版（v0.3.2）
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"/></svg>
-              </a>
-              <a href="/download/fishing-inventory-mobile-1.0.0.apk" class="product-link">
-                下载 Android 版
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"/></svg>
-              </a>
-              <a href="https://github.com/ltmop/inventory-system" target="_blank" rel="noopener" class="product-link">
-                GitHub 开源
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
-              </a>
+            <div class="product-info">
+              <div class="product-top"><h3>通用进销存系统</h3><span class="product-badge">桌面 v0.3.2 · 手机 v1.0.0</span></div>
+              <p class="product-desc">给自家渔具店做起来、现已通用的进销存：扫码开单、AI 记账、库存预警。数据存在店里，不上云。</p>
+              <div class="product-links">
+                <a class="btn btn-accent btn-sm" href="/download/general-inventory-setup-0.3.2.exe">Windows</a>
+                <a class="btn btn-dark btn-sm" href="/download/fishing-inventory-mobile-1.0.0.apk">Android</a>
+                <a class="btn btn-ghost btn-sm" href="https://github.com/ltmop/inventory-system" target="_blank" rel="noopener">GitHub ↗</a>
+              </div>
             </div>
           </article>
           <article class="product reveal d2">
-            <div class="product-top">
-              <h3>CEO 驾驶舱</h3>
-              <span class="product-badge">内部使用中</span>
+            <div class="product-shot" aria-hidden="true">
+              <div class="shot-bar"><i></i><i></i><i></i></div>
+              <div class="shot-window shot-grid">
+                <span class="shot-card"><b>现金流</b><em>3.8万</em></span>
+                <span class="shot-card"><b>逾期</b><em>2</em></span>
+                <span class="shot-card"><b>首单</b><em>未出</em></span>
+                <span class="shot-card"><b>SKU</b><em>176</em></span>
+              </div>
             </div>
-            <p class="product-desc">给自己做的数字指挥中心：实时数据看板 + AI 秘书 + 自动催办 + 知识资产库。先当自己的 CEO 助理，再考虑产品化。</p>
-            <ul class="product-feats">
-              <li>经营数据实时看板，六张卡片一眼看全盘</li>
-              <li>每日晨报、简报自动推送到飞书</li>
-              <li>任务自动催办，夜间静默不打扰，逾期自动升级</li>
-              <li>知识资产库，随问随答</li>
-            </ul>
-            <div class="product-actions">
-              <a href="#contact" class="btn btn-dark">
-                预约演示
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-              </a>
-              <a href="https://github.com/ltmop/ceo-cockpit" target="_blank" rel="noopener" class="product-link">
-                GitHub 开源
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
-              </a>
+            <div class="product-info">
+              <div class="product-top"><h3>CEO 驾驶舱</h3><span class="product-badge">内部使用中</span></div>
+              <p class="product-desc">数字指挥中心：实时数据看板 + AI 秘书 + 自动催办 + 知识资产库。先当自己的 CEO 助理，再考虑产品化。</p>
+              <div class="product-links">
+                <a class="btn btn-dark btn-sm" href="#contact">预约演示</a>
+                <a class="btn btn-ghost btn-sm" href="https://github.com/ltmop/ceo-cockpit" target="_blank" rel="noopener">GitHub ↗</a>
+              </div>
             </div>
           </article>
-          <article class="product reveal d3 span2">
-            <div class="product-top">
-              <h3>经营数据台（minidb）</h3>
-              <span class="product-badge">内部使用中 · v1.0.0</span>
+          <article class="product reveal d3">
+            <div class="product-shot" aria-hidden="true">
+              <div class="shot-bar"><i></i><i></i><i></i></div>
+              <div class="shot-window">
+                <div class="shot-table">
+                  <span class="shot-th"><b>日期</b><b>品类</b><b>金额</b></span>
+                  <span class="shot-tr"><i>08-28</i><i>渔具</i><i>2,410</i></span>
+                  <span class="shot-tr"><i>08-29</i><i>配件</i><i>1,150</i></span>
+                  <span class="shot-tr"><i>08-30</i><i>饵料</i><i>860</i></span>
+                </div>
+              </div>
             </div>
-            <p class="product-desc">给自己做的经营数据台：进销存数据的录入、查看与导出，人机协同，桌面 + Web 双入口。</p>
-            <ul class="product-feats">
-              <li>数据录入与查看，Web 界面即开即用</li>
-              <li>HTTP 网关只读查询，CLI 直连，Excel / CSV 导入</li>
-              <li>只读 / 录入凭据分离，数据权限干净</li>
-              <li>与进销存、CEO 驾驶舱共用同一份经营数据</li>
-            </ul>
-            <div class="product-actions">
-              <a href="#contact" class="btn btn-dark">
-                预约演示
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-              </a>
+            <div class="product-info">
+              <div class="product-top"><h3>经营数据台</h3><span class="product-badge">内部使用中 · v1.0.0</span></div>
+              <p class="product-desc">经营数据的录入、查看与导出，人机协同。Web + 桌面双入口，与进销存、驾驶舱共用同一份数据。</p>
+              <div class="product-links">
+                <a class="btn btn-dark btn-sm" href="#contact">预约演示</a>
+              </div>
             </div>
           </article>
         </div>

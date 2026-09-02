@@ -110,3 +110,28 @@ section[id] { scroll-margin-top: 64px; }
 @media (max-width: 900px) {
   .p-case-grid { grid-template-columns: 1fr; }
 }
+
+/* 使用前后对比 */
+.p-ba { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.p-ba .col { border: 1px solid var(--line); border-radius: 16px; padding: 30px; background: #fff; }
+.p-ba .col.after { background: var(--bg-soft); border-color: transparent; }
+.p-ba .flag { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; color: var(--muted); display: block; margin-bottom: 16px; }
+.p-ba .col.after .flag { color: var(--accent); }
+.p-ba ul { list-style: none; }
+.p-ba li { font-size: 15px; line-height: 1.9; padding-left: 22px; position: relative; margin-bottom: 10px; color: var(--muted); }
+.p-ba .col.after li { color: var(--ink-2); }
+.p-ba li::before { content: '—'; position: absolute; left: 0; color: var(--faint); }
+.p-ba .col.after li::before { content: '✓'; color: var(--accent); font-weight: 700; }
+
+/* 功能详解（手风琴） */
+.p-detail { max-width: 760px; }
+.p-detail details { border-bottom: 1px solid var(--line); padding: 20px 0; }
+.p-detail summary { cursor: pointer; font-size: 18px; font-weight: 700; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.p-detail summary::after { content: '+'; color: var(--accent); font-size: 22px; font-weight: 400; flex-shrink: 0; }
+.p-detail details[open] summary::after { content: '−'; }
+.p-detail .body { padding-top: 14px; color: var(--muted); line-height: 1.85; font-size: 15.5px; }
+.p-detail .body b { color: var(--ink-2); }
+
+@media (max-width: 900px) {
+  .p-ba { grid-template-columns: 1fr; }
+}

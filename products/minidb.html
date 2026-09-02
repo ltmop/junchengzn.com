@@ -24,6 +24,8 @@
   <nav class="p-nav">
     <div class="container inner">
       <a href="#features">核心功能</a>
+      <a href="#detail">功能详解</a>
+      <a href="#beforeafter">使用前后</a>
       <a href="#scenes">使用场景</a>
       <a href="#story">使用案例</a>
       <a href="#changelog">更新日志</a>
@@ -74,6 +76,35 @@
           <div class="p-feat"><h3><span class="dot"></span>Excel / CSV 导入</h3><p>老账、盘点表一键导入，不用手工录。</p></div>
           <div class="p-feat"><h3><span class="dot"></span>人机协同</h3><p>给 AI 留只读口，给人在 Web 界面录数，两边共用一份库。</p></div>
           <div class="p-feat"><h3><span class="dot"></span>桌面 + Web 双入口</h3><p>Electron 桌面壳网页打开，或浏览器直开，怎么方便怎么来。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-sec" id="detail">
+      <div class="container">
+        <h2>功能详解</h2>
+        <p class="lead">每项能力怎么用，点开看。</p>
+        <div class="p-detail">
+          <details open><summary>数据怎么录进去？</summary><div class="body">Web 界面即开即用，录一笔、改一处都实时反映到成表；老账、盘点表用 Excel / CSV 批量导入。</div></details>
+          <details><summary>外部 Agent 怎么接入？</summary><div class="body">通过 HTTP 只读网关查询（配只读凭据），或走 CLI 直连；只读与录入凭据分开，权限干净。</div></details>
+          <details><summary>能不能单独查数据？</summary><div class="body">可以，CLI 直连做脚本查询、自动化批量操作，方便接进你自己的流程。</div></details>
+          <details><summary>和进销存什么关系？</summary><div class="body">共用同一份经营数据：进销存产生数据，经营数据台集中管理，CEO 驾驶舱汇总展示，一套数据三个视角。</div></details>
+          <details><summary>数据安全怎么保证？</summary><div class="body">凭据本机保存（已 gitignore），只读与录入分权；云同步按需开启，默认本地。</div></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-sec" id="beforeafter">
+      <div class="container">
+        <h2>用之前 vs 用之后</h2>
+        <p class="lead">一份数据，人机共用。</p>
+        <div class="p-ba">
+          <div class="col before"><span class="flag">用之前</span>
+            <ul><li>数据散落在 Excel、各系统，一份一个样</li><li>给 AI 看数要单独导出，口径对不上</li><li>外部协作要开权限，怕乱改</li></ul>
+          </div>
+          <div class="col after"><span class="flag">用之后</span>
+            <ul><li>一份库集中管理，人机共读</li><li>AI 走只读网关、人录数，互不干扰</li><li>导出、查询、导入都干净，权限分明</li></ul>
+          </div>
         </div>
       </div>
     </section>

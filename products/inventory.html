@@ -24,6 +24,8 @@
   <nav class="p-nav">
     <div class="container inner">
       <a href="#features">核心功能</a>
+      <a href="#detail">功能详解</a>
+      <a href="#beforeafter">使用前后</a>
       <a href="#screens">界面预览</a>
       <a href="#scenes">使用场景</a>
       <a href="#story">使用案例</a>
@@ -78,6 +80,36 @@
           <div class="p-feat"><h3><span class="dot"></span>库存预警与临期管理</h3><p>低库存自动提醒，临期/报损/配节/套装一口价都在「更多」里。</p></div>
           <div class="p-feat"><h3><span class="dot"></span>利润报表 &amp; 往来账</h3><p>毛利、热销、欠款、支出、盘点，一张报表看全店一天。</p></div>
           <div class="p-feat"><h3><span class="dot"></span>数据在店里，不上云</h3><p>SQLite 本地存储，多设备按需云同步（可关），敏感数据默认不出店。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-sec" id="detail">
+      <div class="container">
+        <h2>功能详解</h2>
+        <p class="lead">每项功能怎么用、解决什么，点开看。</p>
+        <div class="p-detail">
+          <details open><summary>扫码开单怎么用？</summary><div class="body">扫条码或搜索商品直接进购物车。套装一口价会自动按组成件分摊，取整误差补到最后一单，保证购物车合计正好是目标价。</div></details>
+          <details><summary>手机怎么开店？</summary><div class="body">手机连上店内 WiFi，打开系统给的网址即可开单、入库，和桌面端用同一套统计口径，不会两边数字对不上。</div></details>
+          <details><summary>AI 记账是什么？</summary><div class="body">本地语音识别 + 豆包视觉：口述一笔买卖或拍一张订单，自动转成一笔销售，不用打字。</div></details>
+          <details><summary>库存预警怎么触发？</summary><div class="body">低于设定库存自动提醒；临期/报损/配节/套装一口价都在「更多」页里，一键处理。</div></details>
+          <details><summary>报表有哪些？</summary><div class="body">毛利、热销、欠款、支出、盘点，一张报表看全店一天，按品类口径与手机端一致。</div></details>
+          <details><summary>数据安全怎么保证？</summary><div class="body">默认存你本机的 SQLite，不上云。需要多设备同步时开启云同步（AES-256-GCM 加密），数据仍在你的账号下。</div></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-sec" id="beforeafter">
+      <div class="container">
+        <h2>用之前 vs 用之后</h2>
+        <p class="lead">这套系统不是噱头，它把我们店里最痛的几件事变简单了。</p>
+        <div class="p-ba">
+          <div class="col before"><span class="flag">用之前</span>
+            <ul><li>开单靠手写，月底对账焦头烂额</li><li>库存靠感觉，临期了才想起来</li><li>老板得守在电脑前才能看数据</li><li>一套账本多人改，口径乱</li></ul>
+          </div>
+          <div class="col after"><span class="flag">用之后</span>
+            <ul><li>扫码 30 秒开单，账目自动进系统</li><li>库存预警、临期自动提醒</li><li>手机连 WiFi 边走边开单</li><li>报表、盘点一目了然，口径一致</li></ul>
+          </div>
         </div>
       </div>
     </section>

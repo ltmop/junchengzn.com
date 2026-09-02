@@ -209,6 +209,109 @@ a { color: inherit; }
   50% { transform: translateX(-50%) translateY(7px); }
 }
 
+/* ---------- 首屏 CTA 组 + 产品主视觉 ---------- */
+.hero-cta {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 56px;
+}
+.btn-lg { padding: 16px 34px; font-size: 16px; }
+
+.hero-showcase {
+  max-width: 860px;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 24px 64px rgba(11, 13, 18, 0.10);
+}
+.hs-bar {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 12px 16px;
+  background: #f4f5f7;
+  border-bottom: 1px solid var(--line);
+}
+.hs-bar i { width: 10px; height: 10px; border-radius: 50%; background: #e2e5ea; display: block; }
+.hs-bar i:first-child { background: #ff8a8a; }
+.hs-bar i:nth-child(2) { background: #ffd66e; }
+.hs-bar i:nth-child(3) { background: #86d6a4; }
+.hs-url {
+  margin-left: 12px;
+  font-size: 12px;
+  color: var(--faint);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 4px 14px;
+}
+.hs-body { display: flex; text-align: left; }
+.hs-rail {
+  width: 128px;
+  flex-shrink: 0;
+  padding: 20px 12px;
+  border-right: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.hs-rail b, .hs-rail span {
+  display: block;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 500;
+}
+.hs-rail b.on {
+  background: #eaf1ff;
+  color: var(--accent);
+  font-weight: 700;
+}
+.hs-main { flex: 1; padding: 22px 24px; }
+.hs-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.hs-stat {
+  background: var(--bg-soft);
+  border-radius: 12px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.hs-stat small { font-size: 12px; color: var(--muted); }
+.hs-stat b { font-size: 26px; font-weight: 800; color: var(--accent); letter-spacing: -0.5px; }
+.hs-stat em { font-style: normal; font-size: 11px; color: var(--faint); }
+.hs-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  height: 96px;
+  padding: 14px;
+  background: var(--bg-soft);
+  border-radius: 12px;
+}
+.hs-chart span {
+  flex: 1;
+  height: var(--h);
+  background: var(--accent);
+  border-radius: 6px 6px 0 0;
+  opacity: 0.85;
+}
+@media (max-width: 768px) {
+  .hs-rail { display: none; }
+  .hs-stats { grid-template-columns: repeat(2, 1fr); }
+  .hero-cta { flex-direction: column; align-items: center; }
+}
+
 /* ---------- 板块通用 ---------- */
 .section { padding: 140px 0; }
 .section-soft { background: var(--bg-soft); }

@@ -50,3 +50,63 @@
 }
 .p-top { padding: 56px 0 24px; border-bottom: 1px solid var(--line); }
 .p-top .inner { display: flex; justify-content: space-between; align-items: center; }
+
+/* 锚点导航 */
+.p-nav {
+  position: sticky; top: 0; z-index: 60;
+  background: rgba(255,255,255,0.94);
+  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+.p-nav .inner { display: flex; gap: 6px; overflow-x: auto; padding: 0; scrollbar-width: none; }
+.p-nav .inner::-webkit-scrollbar { display: none; }
+.p-nav a {
+  padding: 16px 16px 12px; font-size: 14px; font-weight: 600; color: var(--ink-2);
+  text-decoration: none; white-space: nowrap; border-bottom: 2px solid transparent;
+}
+.p-nav a:hover { color: var(--accent); }
+.p-nav a.active { color: var(--accent); border-bottom-color: var(--accent); }
+section[id] { scroll-margin-top: 64px; }
+
+/* 使用场景 */
+.p-case-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.p-case {
+  border: 1px solid var(--line); border-radius: 16px; padding: 28px; background: #fff;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.p-case h3 { font-size: 19px; font-weight: 700; }
+.p-case p { font-size: 15px; color: var(--muted); line-height: 1.8; margin: 0; }
+
+/* 使用案例 */
+.p-story {
+  background: var(--bg-soft); border-radius: 20px; padding: 40px;
+  border-left: 4px solid var(--accent);
+}
+.p-story h3 { font-size: 22px; font-weight: 800; margin-bottom: 14px; }
+.p-story p { font-size: 17px; line-height: 1.9; color: var(--ink-2); margin-bottom: 18px; }
+.p-story ul { list-style: none; }
+.p-story li { font-size: 15.5px; color: var(--ink-2); line-height: 1.85; padding-left: 22px; position: relative; margin-bottom: 10px; }
+.p-story li::before { content: '✓'; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+
+/* 更新日志 */
+.p-log { max-width: 720px; }
+.p-log .entry { display: grid; grid-template-columns: 96px 1fr; gap: 20px; padding: 20px 0; border-bottom: 1px solid var(--line); }
+.p-log .ver { font-size: 13px; font-weight: 700; color: var(--accent); white-space: nowrap; }
+.p-log .ver small { display: block; color: var(--faint); font-weight: 500; }
+.p-log h4 { font-size: 17px; font-weight: 700; margin-bottom: 6px; }
+.p-log p { font-size: 14.5px; color: var(--muted); line-height: 1.7; margin: 0; }
+
+/* 切换产品 */
+.p-more { padding: 0 0 88px; }
+.p-more .inner { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; }
+.p-more a {
+  display: inline-flex; align-items: center; gap: 8px; padding: 14px 24px;
+  border: 1px solid var(--line); border-radius: 999px; text-decoration: none;
+  font-size: 15px; font-weight: 600; color: var(--ink-2); transition: border-color .2s, color .2s;
+}
+.p-more a:hover { border-color: var(--accent); color: var(--accent); }
+.p-more a small { color: var(--faint); font-weight: 500; }
+
+@media (max-width: 900px) {
+  .p-case-grid { grid-template-columns: 1fr; }
+}

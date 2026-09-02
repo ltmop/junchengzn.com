@@ -21,6 +21,17 @@
     </div>
   </header>
 
+  <nav class="p-nav">
+    <div class="container inner">
+      <a href="#features">核心功能</a>
+      <a href="#screens">界面预览</a>
+      <a href="#scenes">使用场景</a>
+      <a href="#story">使用案例</a>
+      <a href="#changelog">更新日志</a>
+      <a href="#faq">常见问题</a>
+    </div>
+  </nav>
+
   <main>
     <section class="p-hero">
       <div class="container">
@@ -35,7 +46,6 @@
       </div>
     </section>
 
-    <!-- 大视觉 -->
     <section class="p-visual reveal">
       <div class="container">
         <div class="hero-showcase">
@@ -57,8 +67,7 @@
       </div>
     </section>
 
-    <!-- 核心功能 -->
-    <section class="p-sec">
+    <section class="p-sec" id="features">
       <div class="container">
         <h2>核心功能</h2>
         <p class="lead">从开单那一刻的痛快，到报表一目了然，都是我们自己天天在用的。</p>
@@ -73,8 +82,7 @@
       </div>
     </section>
 
-    <!-- 截图预览 -->
-    <section class="p-sec">
+    <section class="p-sec" id="screens">
       <div class="container">
         <h2>界面预览</h2>
         <p class="lead">几个常用界面，左边到右边都是真实的功能。</p>
@@ -95,23 +103,49 @@
       </div>
     </section>
 
-    <!-- 下载 -->
-    <section class="p-sec">
+    <section class="p-sec" id="scenes">
       <div class="container">
-        <div class="p-download reveal">
-          <h2>下载使用</h2>
-          <p>桌面 Windows 安装包 + Android 手机版，安装即用，无需注册账号。源码已在 GitHub 开源，可直接审计。</p>
-          <div class="row">
-            <a href="/download/general-inventory-setup-0.3.2.exe" class="btn btn-light btn-lg">Windows 桌面版</a>
-            <a href="/download/fishing-inventory-mobile-1.0.0.apk" class="btn btn-light btn-lg">Android 手机版</a>
-            <a href="https://github.com/ltmop/inventory-system" target="_blank" rel="noopener" class="btn btn-ghost btn-lg">GitHub ↗</a>
-          </div>
+        <h2>使用场景</h2>
+        <p class="lead">我们主要在这么用，你也可以。</p>
+        <div class="p-case-grid">
+          <div class="p-case"><h3>店里日常开单</h3><p>收银台前扫码即开单，单品/套装/一口价都支持，顾客不用等。</p></div>
+          <div class="p-case"><h3>仓库盘点与临期</h3><p>按品类盘点、临期预警、报损一键记录，库存准确率是靠日常用出来的。</p></div>
+          <div class="p-case"><h3>手机边看店边开单</h3><p>老板在店里走来走去，手机连 WiFi 就是收银台，不用坐在电脑前。</p></div>
+          <div class="p-case"><h3>多台电脑 / 多设备同步</h3><p>登录同一账号，桌面、手机数据同源，库存、客户、报表随时一致。</p></div>
         </div>
       </div>
     </section>
 
-    <!-- FAQ -->
-    <section class="p-sec">
+    <section class="p-sec" id="story">
+      <div class="container">
+        <h2>我们自己的使用案例</h2>
+        <p class="lead">这套系统不是概念验证——它就是我们渔具店天天在用的东西。</p>
+        <div class="p-story reveal">
+          <h3>从纸质账本到扫码开单</h3>
+          <p>我们的渔具门店开了 10 年，库存几十万。上了进销存之后，176 个 SKU、20 个品类全部建档，扫码开单替代了手写账。库存盘点一次跑通，跨境 85 个 SKU 的平均毛利率 50.02%，就是这么盘出来的。</p>
+          <ul>
+            <li>线下门店月营业额约 5 万，用系统后账目清晰、不丢单</li>
+            <li>手机端开店，老板不用守电脑，边走边开单</li>
+            <li>自己的店先跑通，再分享给别人用——这就是「先自用，再分享」</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-sec" id="changelog">
+      <div class="container">
+        <h2>更新日志</h2>
+        <p class="lead">版本跟着真实经营走，基本都是「我们用着缺什么就补什么」。</p>
+        <div class="p-log">
+          <div class="entry"><span class="ver">v0.3.2<small>2026-08-28</small></span><div><h4>通用版最新</h4><p>AI 官方网关、供应商付款、报表三件套、员工账号——把「自己店在用的」做成「别人也能用的」。</p></div></div>
+          <div class="entry"><span class="ver">v0.3.0<small>2026-08-26</small></span><div><h4>报表与多端</h4><p>报表与统计口径补齐，手机端功能同步，多设备同步机制上线。</p></div></div>
+          <div class="entry"><span class="ver">v0.1.0<small>2026-08-25</small></span><div><h4>通用版首版</h4><p>从渔具版演化成通用进销存，面向任何开店做生意的个体户。</p></div></div>
+          <div class="entry"><span class="ver">v0.1.0<small>2026-08-15</small></span><div><h4>渔具版首版</h4><p>第一版给自己渔具店用的进销存，桌面 + 手机双端跑通。</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-sec" id="faq">
       <div class="container">
         <h2>常见问题</h2>
         <p class="lead">几个最常被问到的。</p>
@@ -121,6 +155,14 @@
           <details><summary>多台电脑怎么同步？</summary><p>登录同一账号后开启云同步，各设备按需拉取，冲突有备份兜底，不会丢数据。</p></details>
           <details><summary>手机怎么用？</summary><p>手机连店内 WiFi，打开系统给的网址即可开店；数据与桌面端同源，统计口径完全一致。</p></details>
         </div>
+      </div>
+    </section>
+
+    <section class="p-more">
+      <div class="container inner">
+        <a href="products/cockpit.html">CEO 驾驶舱 <small>· 内部使用中</small></a>
+        <a href="products/minidb.html">经营数据台 <small>· 内部使用中</small></a>
+        <a href="/">返回首页</a>
       </div>
     </section>
   </main>
@@ -134,6 +176,21 @@
     </div>
   </footer>
 
+  <script>
+    // 锚点高亮
+    (function(){
+      var links = document.querySelectorAll('.p-nav a');
+      var secs = Array.prototype.map.call(links, function(a){ return document.querySelector(a.getAttribute('href')); });
+      var onScroll = function(){
+        var y = window.scrollY + 90;
+        var idx = 0;
+        secs.forEach(function(s,i){ if(s && s.offsetTop <= y) idx = i; });
+        links.forEach(function(a,i){ a.classList.toggle('active', i===idx); });
+      };
+      window.addEventListener('scroll', onScroll, {passive:true});
+      onScroll();
+    })();
+  </script>
   <script src="../assets/js/main.js" defer></script>
 </body>
 </html>

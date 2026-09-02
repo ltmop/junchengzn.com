@@ -21,6 +21,16 @@
     </div>
   </header>
 
+  <nav class="p-nav">
+    <div class="container inner">
+      <a href="#features">核心功能</a>
+      <a href="#scenes">使用场景</a>
+      <a href="#story">使用案例</a>
+      <a href="#changelog">更新日志</a>
+      <a href="#faq">常见问题</a>
+    </div>
+  </nav>
+
   <main>
     <section class="p-hero">
       <div class="container">
@@ -53,7 +63,7 @@
       </div>
     </section>
 
-    <section class="p-sec">
+    <section class="p-sec" id="features">
       <div class="container">
         <h2>核心功能</h2>
         <p class="lead">同一份经营数据，人看、AI 也能查。</p>
@@ -64,6 +74,45 @@
           <div class="p-feat"><h3><span class="dot"></span>Excel / CSV 导入</h3><p>老账、盘点表一键导入，不用手工录。</p></div>
           <div class="p-feat"><h3><span class="dot"></span>人机协同</h3><p>给 AI 留只读口，给人在 Web 界面录数，两边共用一份库。</p></div>
           <div class="p-feat"><h3><span class="dot"></span>桌面 + Web 双入口</h3><p>Electron 桌面壳网页打开，或浏览器直开，怎么方便怎么来。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-sec" id="scenes">
+      <div class="container">
+        <h2>使用场景</h2>
+        <p class="lead">经营数据怎么进、怎么出、怎么被 AI 用。</p>
+        <div class="p-case-grid">
+          <div class="p-case"><h3>经营数据集中录入</h3><p>进销存、销售、费用都录到一处，Web 界面即开即用。</p></div>
+          <div class="p-case"><h3>报表与导出</h3><p>按需查询、Excel / CSV 一键导出，复盘或报账都用它。</p></div>
+          <div class="p-case"><h3>外部 Agent 只读接入</h3><p>给 AI 开只读网关，AI 查数、人录数，两边共用一份库。</p></div>
+          <div class="p-case"><h3>与进销存、驾驶舱同源</h3><p>一套数据三个视角：进销存产生数据、数据台管理、驾驶舱展示。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-sec" id="story">
+      <div class="container">
+        <h2>我们自己的使用案例</h2>
+        <p class="lead">让 Agent 和我们用同一份真实数据。</p>
+        <div class="p-story reveal">
+          <h3>人机共用一个库</h3>
+          <p>我们的 AI（CEO 驾驶舱、日常经营问答）都通过它读经营数据、写台账；人则在 Web 界面录数、看表。只读凭据和录入凭据分开，权限干净，谁也不会误改对方的数据。</p>
+          <ul>
+            <li>外部 Agent / 协作者走 HTTP 只读网关查询，不碰写入</li>
+            <li>老账、盘点表用 Excel / CSV 批量导入，不用手工敲</li>
+            <li>人机协同：你录数据，让 AI 去分析，两边始终一致</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-sec" id="changelog">
+      <div class="container">
+        <h2>更新日志</h2>
+        <p class="lead">经营数据台的第一版，正持续迭代。</p>
+        <div class="p-log">
+          <div class="entry"><span class="ver">v1.0.0<small>2026-08-26</small></span><div><h4>首版</h4><p>Web 界面 + 桌面壳双入口，HTTP 只读网关、CLI 直连、Excel/CSV 导入。</p></div></div>
         </div>
       </div>
     </section>
@@ -80,7 +129,7 @@
       </div>
     </section>
 
-    <section class="p-sec">
+    <section class="p-sec" id="faq">
       <div class="container">
         <h2>常见问题</h2>
         <p class="lead">几个关键问题。</p>
@@ -92,6 +141,25 @@
       </div>
     </section>
   </main>
+
+  <section class="p-more">
+    <div class="container inner">
+      <a href="products/inventory.html">通用进销存系统 <small>· 桌面 v0.3.2</small></a>
+      <a href="products/cockpit.html">CEO 驾驶舱 <small>· 内部使用中</small></a>
+      <a href="/">返回首页</a>
+    </div>
+  </section>
+
+  <script>
+    (function(){
+      var links = document.querySelectorAll('.p-nav a');
+      var secs = Array.prototype.map.call(links, function(a){ return document.querySelector(a.getAttribute('href')); });
+      var onScroll = function(){ var y = window.scrollY + 90; var idx = 0;
+        secs.forEach(function(s,i){ if(s && s.offsetTop <= y) idx = i; });
+        links.forEach(function(a,i){ a.classList.toggle('active', i===idx); }); };
+      window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+    })();
+  </script>
 
   <footer class="site-footer">
     <div class="container">

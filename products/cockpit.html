@@ -21,6 +21,17 @@
     </div>
   </header>
 
+  <nav class="p-nav">
+    <div class="container inner">
+      <a href="#features">核心功能</a>
+      <a href="#screens">界面预览</a>
+      <a href="#scenes">使用场景</a>
+      <a href="#story">使用案例</a>
+      <a href="#changelog">更新日志</a>
+      <a href="#faq">常见问题</a>
+    </div>
+  </nav>
+
   <main>
     <section class="p-hero">
       <div class="container">
@@ -54,7 +65,7 @@
       </div>
     </section>
 
-    <section class="p-sec">
+    <section class="p-sec" id="features">
       <div class="container">
         <h2>核心功能</h2>
         <p class="lead">让 CEO 从「人找信息」变成「信息找人」。</p>
@@ -69,7 +80,7 @@
       </div>
     </section>
 
-    <section class="p-sec">
+    <section class="p-sec" id="screens">
       <div class="container">
         <h2>界面预览</h2>
         <p class="lead">桌面看板、手机看板与催办面板。</p>
@@ -90,6 +101,47 @@
       </div>
     </section>
 
+    <section class="p-sec" id="scenes">
+      <div class="container">
+        <h2>使用场景</h2>
+        <p class="lead">我们主要在这么用。</p>
+        <div class="p-case-grid">
+          <div class="p-case"><h3>每天晨会前，先看全盘</h3><p>打开六张经营卡片，现金流、逾期、进度、竞品、决策、会议，一分钟进入状态。</p></div>
+          <div class="p-case"><h3>任务逾期自动催办</h3><p>台账同步、死线追踪；夜晚静默不打扰，逾期自动升级话术，不用挨个人催。</p></div>
+          <div class="p-case"><h3>飞书群 @ 即问即答</h3><p>在群里 @CEO 助理，问现金流、任务进度、逾期，Agent 直接查库回答。</p></div>
+          <div class="p-case"><h3>知识资产库随问随答</h3><p>对接本地知识库，问什么答什么，每条回答带原文出处。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-sec" id="story">
+      <div class="container">
+        <h2>我们自己的使用案例</h2>
+        <p class="lead">3 个人 + 20 个 AI 角色怎么协同，驾驶舱就是指挥中心。</p>
+        <div class="p-story reveal">
+          <h3>每天 22:00，AI 先汇报，人再看全盘</h3>
+          <p>我们没有庞大的中层，靠的是把公司拆成 20 个 AI 角色：运营、物流、财务、供应链各司其职。每晚各职能 AI 汇报当日工作，汇总成日报，创始人在舱里看六张卡片就知道明天要盯什么。</p>
+          <ul>
+            <li>晨报、简报自动推到飞书，不用人整理</li>
+            <li>催办自动排队，逾期超一周自动升级红线话术</li>
+            <li>人只做决策与审批：上架、调价、广告预算、供应商切换，AI 无权越过</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-sec" id="changelog">
+      <div class="container">
+        <h2>更新日志</h2>
+        <p class="lead">驾驶舱一直在迭代，都是我们自己用着缺什么就补什么。</p>
+        <div class="p-log">
+          <div class="entry"><span class="ver">v3<small>2026-08</small></span><div><h4>催办与回执</h4><p>任务自动催办加夜间静默时段、已读回执、群聊引用回复，体验更顺。</p></div></div>
+          <div class="entry"><span class="ver">v2<small>2026-08</small></span><div><h4>AI 秘书与知识库</h4><p>晨报、简报、纪要自动生成；知识资产库随问随答，对接本地知识库。</p></div></div>
+          <div class="entry"><span class="ver">v1<small>2026-08</small></span><div><h4>看板与飞书桥</h4><p>六张经营卡片看板 + 飞书桥接，数据看板上线。</p></div></div>
+        </div>
+      </div>
+    </section>
+
     <section class="p-sec">
       <div class="container">
         <div class="p-download reveal">
@@ -103,7 +155,7 @@
       </div>
     </section>
 
-    <section class="p-sec">
+    <section class="p-sec" id="faq">
       <div class="container">
         <h2>常见问题</h2>
         <p class="lead">关于这个系统最常被问的。</p>
@@ -116,6 +168,25 @@
       </div>
     </section>
   </main>
+
+  <section class="p-more">
+    <div class="container inner">
+      <a href="products/inventory.html">通用进销存系统 <small>· 桌面 v0.3.2</small></a>
+      <a href="products/minidb.html">经营数据台 <small>· 内部使用中</small></a>
+      <a href="/">返回首页</a>
+    </div>
+  </section>
+
+  <script>
+    (function(){
+      var links = document.querySelectorAll('.p-nav a');
+      var secs = Array.prototype.map.call(links, function(a){ return document.querySelector(a.getAttribute('href')); });
+      var onScroll = function(){ var y = window.scrollY + 90; var idx = 0;
+        secs.forEach(function(s,i){ if(s && s.offsetTop <= y) idx = i; });
+        links.forEach(function(a,i){ a.classList.toggle('active', i===idx); }); };
+      window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+    })();
+  </script>
 
   <footer class="site-footer">
     <div class="container">

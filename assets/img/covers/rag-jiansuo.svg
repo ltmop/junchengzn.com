@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420">
+  <rect width="800" height="420" fill="#f6f7f9"/>
+  <g fill="none" stroke="#e7e9ee" stroke-width="2"><path d="M0 300H800"/><path d="M0 340H800"/></g>
+  <g>
+    <!-- 文档堆 -->
+    <rect x="200" y="80" width="120" height="160" rx="10" fill="#fff" stroke="#e7e9ee" stroke-width="2"/>
+    <rect x="280" y="120" width="120" height="160" rx="10" fill="#fff" stroke="#e7e9ee" stroke-width="2"/>
+    <rect x="360" y="160" width="120" height="160" rx="10" fill="#0b0d12"/>
+    <!-- 检索放大镜 + 箭头 -->
+    <g transform="translate(510,180)">
+      <circle cx="0" cy="0" r="40" fill="none" stroke="#0066F5" stroke-width="8"/>
+      <path d="M28 28 L60 60" stroke="#0066F5" stroke-width="10" stroke-linecap="round"/>
+    </g>
+    <path d="M600 120 L656 146 L600 172" fill="none" stroke="#0066F5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="400" y="316" text-anchor="middle" font-family="PingFang SC,Microsoft YaHei,sans-serif" font-size="17" fill="#8a8f98">700+ 篇笔记，RAG 让知识库可被提问</text>
+  </g>
+</svg>

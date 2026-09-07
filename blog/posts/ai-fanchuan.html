@@ -25,6 +25,7 @@
         <a href="/#contact">联系我们</a>
       </nav>
       <a href="/blog/" class="btn btn-dark">返回洞察</a>
+      <button class="sf-menu-btn" aria-label="菜单" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </header>
 
@@ -76,5 +77,6 @@
       </div>
     </div>
   </footer>
+  <script>(function(){var b=document.querySelector('.sf-menu-btn'),n=document.querySelector('.sf-nav-links');if(!b||!n)return;b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',String(o));});n.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){n.classList.remove('open');b.setAttribute('aria-expanded','false');});});})();</script>
 </body>
 </html>

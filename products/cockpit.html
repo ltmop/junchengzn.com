@@ -6,17 +6,24 @@
   <title>CEO 驾驶舱 | 均成智能</title>
   <meta name="description" content="CEO 驾驶舱：实时数据看板 + AI 秘书 + 自动催办 + 知识资产库，让 CEO 从「人找信息」变成「信息找人」。">
   <link rel="canonical" href="https://junchengzn.com/products/cockpit.html">
-  <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
-  <link rel="stylesheet" href="../assets/css/style.css">
-  <link rel="stylesheet" href="../assets/css/products.css">
+  <link rel="icon" type="image/svg+xml" href="../assets/img/favicon-scifi.svg">
+  <link rel="stylesheet" href="../assets/css/scifi.css">
 </head>
 <body>
-  <header class="p-top">
-    <div class="container inner">
-      <a href="/" class="logo" aria-label="返回官网首页">
-        <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#0066F5"/><text x="16" y="22.5" text-anchor="middle" font-family="'PingFang SC','Microsoft YaHei',sans-serif" font-size="17" font-weight="700" fill="#ffffff">均</text></svg>
+  <header class="sf-header">
+    <div class="container sf-header-in">
+      <a href="/" class="logo" aria-label="均成智能 - 返回官网首页">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#0a0c10" stroke="rgba(240,163,92,.45)"/><ellipse cx="16" cy="16" rx="10" ry="3.8" fill="none" stroke="#f0a35c" stroke-width="1.8" transform="rotate(-18 16 16)"/><circle cx="16" cy="16" r="4" fill="#000000" stroke="#f0a35c" stroke-width="1.4"/></svg>
         <span>均成智能</span>
       </a>
+      <nav class="sf-nav-links">
+        <a href="/#business">业务</a>
+        <a href="/#products" class="on">产品</a>
+        <a href="/#data">数据</a>
+        <a href="/#voices">声音</a>
+        <a href="/blog/">洞察</a>
+        <a href="/#contact">联系我们</a>
+      </nav>
       <a href="/" class="btn btn-dark">返回官网</a>
     </div>
   </header>
@@ -47,7 +54,7 @@
       </div>
     </section>
 
-    <section class="p-visual reveal">
+    <section class="p-visual">
       <div class="container">
         <div class="hero-showcase">
           <div class="hs-bar"><i></i><i></i><i></i><span class="hs-url">junchengzn.com · CEO 驾驶舱</span></div>
@@ -117,15 +124,15 @@
         <h2>界面预览</h2>
         <p class="lead">桌面看板、手机看板与催办面板。</p>
         <div class="p-screens">
-          <div class="p-screen reveal">
+          <div class="p-screen">
             <div style="padding:14px 14px 0"><div class="shot-grid" style="grid-template-columns:1fr 1fr"><span class="shot-card"><b>现金流</b><em>3.8万</em></span><span class="shot-card"><b>逾期</b><em>2</em></span></div></div>
             <div class="cap">总览：六张经营卡片</div>
           </div>
-          <div class="p-screen reveal d1">
+          <div class="p-screen">
             <div style="padding:14px 14px 0"><div class="shot-table"><span class="shot-th"><b>任务</b><b>死线</b><b>状态</b></span><span class="shot-tr"><i>上架</i><i>9/1</i><i>进行中</i></span><span class="shot-tr"><i>定价</i><i>9/5</i><i>逾期</i></span></div></div>
             <div class="cap">催办：死线追踪与升级</div>
           </div>
-          <div class="p-screen reveal d2">
+          <div class="p-screen">
             <div style="padding:14px 14px 0"><div class="shot-field">🔍 知识库提问</div><div class="shot-rows"><span class="shot-row"><b>现金流红线</b><i>→</i></span></div></div>
             <div class="cap">知识资产库：随问随答</div>
           </div>
@@ -150,7 +157,7 @@
       <div class="container">
         <h2>我们自己的使用案例</h2>
         <p class="lead">3 个人 + 20 个 AI 角色怎么协同，驾驶舱就是指挥中心。</p>
-        <div class="p-story reveal">
+        <div class="p-story">
           <h3>每天 22:00，AI 先汇报，人再看全盘</h3>
           <p>我们没有庞大的中层，靠的是把公司拆成 20 个 AI 角色：运营、物流、财务、供应链各司其职。每晚各职能 AI 汇报当日工作，汇总成日报，创始人在舱里看六张卡片就知道明天要盯什么。</p>
           <ul>
@@ -176,11 +183,11 @@
 
     <section class="p-sec">
       <div class="container">
-        <div class="p-download reveal">
+        <div class="p-download">
           <h2>想体验？</h2>
           <p>驾驶舱目前是我们自己在用，暂未开放对外。有兴趣可以预约演示，或直接看开源代码了解实现。</p>
           <div class="row">
-            <a href="/#contact" class="btn btn-light btn-lg">预约演示</a>
+            <a href="/#contact" class="btn btn-accent btn-lg">预约演示</a>
             <a href="https://github.com/ltmop/ceo-cockpit" target="_blank" rel="noopener" class="btn btn-ghost btn-lg">GitHub ↗</a>
           </div>
         </div>
@@ -203,32 +210,30 @@
 
   <section class="p-more">
     <div class="container inner">
-      <a href="products/inventory.html">通用进销存系统 <small>· 桌面 v0.3.2</small></a>
-      <a href="products/minidb.html">经营数据台 <small>· 内部使用中</small></a>
+      <a href="inventory.html">通用进销存系统 <small>· 桌面 v0.3.2</small></a>
+      <a href="minidb.html">经营数据台 <small>· 内部使用中</small></a>
       <a href="/">返回首页</a>
     </div>
   </section>
 
-  <script>
-    (function(){
-      var links = document.querySelectorAll('.p-nav a');
-      var secs = Array.prototype.map.call(links, function(a){ return document.querySelector(a.getAttribute('href')); });
-      var onScroll = function(){ var y = window.scrollY + 90; var idx = 0;
-        secs.forEach(function(s,i){ if(s && s.offsetTop <= y) idx = i; });
-        links.forEach(function(a,i){ a.classList.toggle('active', i===idx); }); };
-      window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
-    })();
-  </script>
-
   <footer class="site-footer">
     <div class="container">
-      <div class="footer-bottom" style="border-top: 1px solid var(--line); padding: 24px 0;">
+      <div class="footer-bottom">
         <span>© 2026 均成智能跨境电商科技有限公司</span>
         <span>让 AI 成为企业的增长引擎</span>
       </div>
     </div>
   </footer>
 
-  <script src="../assets/js/main.js" defer></script>
+  <script>
+    (function(){
+      var links = document.querySelectorAll('.p-nav a');
+      var secs = Array.prototype.map.call(links, function(a){ return document.querySelector(a.getAttribute('href')); });
+      var onScroll = function(){ var y = window.scrollY + 140; var idx = 0;
+        secs.forEach(function(s,i){ if(s && s.offsetTop <= y) idx = i; });
+        links.forEach(function(a,i){ a.classList.toggle('active', i===idx); }); };
+      window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+    })();
+  </script>
 </body>
 </html>

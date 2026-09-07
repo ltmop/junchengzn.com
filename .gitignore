@@ -1,5 +1,11 @@
-# ϵͳ����
+﻿# 系统杂项
 Thumbs.db
 .DS_Store
 desktop.ini
+# 大安装包/备份（服务器直链分发，不入库）
+download/
+*.bak*
+*.bak-*
+# 本地预览/调试
+_qa.html
 

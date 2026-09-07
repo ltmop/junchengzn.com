@@ -625,6 +625,34 @@ a { color: inherit; }
 }
 .voice-role { font-size: 13.5px; color: var(--muted); }
 
+/* ---------- 洞察卡片 ---------- */
+.p-name { text-decoration: none; color: inherit; }
+.p-name:hover h3 { color: var(--accent); }
+.p-name h3 { transition: color 0.2s; }
+
+.insight-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.insight-card {
+  background: var(--bg-soft);
+  border-radius: 16px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
+}
+.insight-card:hover { transform: translateY(-6px); box-shadow: 0 18px 44px rgba(11,13,18,0.08); }
+.ic-cover { aspect-ratio: 16 / 7; overflow: hidden; background: var(--bg-soft); }
+.ic-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.ic-body { padding: 22px 22px 24px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.ic-tag { font-size: 12px; font-weight: 600; letter-spacing: 1.5px; color: var(--accent); }
+.ic-body h3 { font-size: 19px; font-weight: 700; letter-spacing: -0.2px; line-height: 1.4; }
+.ic-body p { font-size: 14.5px; color: var(--muted); line-height: 1.7; flex: 1; }
+.ic-meta { font-size: 12.5px; color: var(--faint); }
+@media (max-width: 1024px) {
+  .insight-grid { grid-template-columns: 1fr; max-width: 560px; margin: 0 auto; }
+}
+
 /* ---------- 洞察列表 ---------- */
 .insights-list { border-top: 1px solid var(--line); }
 

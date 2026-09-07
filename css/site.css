@@ -1,0 +1,457 @@
+/* 均成智能官网 — 深空科幻调性,与 GARGANTUA 黑洞渲染器同一气质 */
+
+:root {
+  --bg: #050608;
+  --ink: #e8e8e6;
+  --ink-2: #9a9da3;
+  --amber: #f0a35c;      /* 吸积盘暖橙:主 CTA / 大数字 / 引言标记 */
+  --cyan: #2cc9ff;       /* 遥测青:标签 / 链接 hover */
+  --hairline: rgba(255, 255, 255, 0.08);
+  --card: rgba(14, 16, 18, 0.72);
+  --mono: ui-monospace, "Cascadia Mono", Consolas, monospace;
+  --sans: "Microsoft YaHei", "PingFang SC", sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  line-height: 1.75;
+  overflow-x: hidden;
+}
+
+::selection { background: rgba(240, 163, 92, 0.35); }
+
+/* ---------------- 黑洞背景层 ---------------- */
+#bh-bg {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  pointer-events: none;   /* 背景不拦截交互 */
+  z-index: 0;
+}
+
+/* 内容区渐变 scrim:hero 区黑洞最清晰,向下逐步加深保证可读 */
+.bg-scrim {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    rgba(5, 6, 8, 0.12) 0%,
+    rgba(5, 6, 8, 0.30) 45%,
+    rgba(5, 6, 8, 0.66) 100%
+  );
+}
+
+.nav, main, .footer { position: relative; z-index: 2; }
+
+/* 文字可读性兜底:压在盘体亮斑上的文案给深空色阴影 */
+.section-body, .datum-note, .datum-num, .voice-text, .card p, .hero-sub {
+  text-shadow: 0 1px 10px rgba(5, 6, 8, 0.85);
+}
+
+/* ---------------- 导航 ---------------- */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 40px;
+  background: rgba(5, 6, 8, 0.55);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--hairline);
+}
+
+.nav-brand { text-decoration: none; display: flex; align-items: baseline; gap: 12px; }
+.nav-logo { color: var(--ink); font-size: 18px; font-weight: 600; }
+.nav-domain {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--ink-2);
+}
+
+.nav-links { display: flex; gap: 28px; }
+.nav-links a {
+  color: var(--ink-2);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--cyan); }
+
+/* ---------------- Hero ---------------- */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 40px;
+  position: relative;
+}
+
+.hero-inner { max-width: 1120px; margin: 0 auto; width: 100%; }
+
+.kicker {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 22px;
+}
+
+.hero-title {
+  font-size: clamp(40px, 6vw, 76px);
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+.hero-title em { font-style: normal; color: var(--amber); }
+
+.hero-sub {
+  margin-top: 26px;
+  max-width: 560px;
+  color: var(--ink-2);
+  font-size: 16px;
+}
+
+.hero-cta { margin-top: 38px; display: flex; gap: 16px; flex-wrap: wrap; }
+
+.btn {
+  display: inline-block;
+  padding: 13px 30px;
+  font-size: 15px;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: border-color 0.2s, background 0.2s, color 0.2s;
+}
+.btn-primary {
+  background: var(--amber);
+  color: #16100a;
+  font-weight: 600;
+}
+.btn-primary:hover { background: #ffb76e; }
+.btn-ghost {
+  color: var(--ink);
+  border-color: var(--hairline);
+  background: rgba(14, 16, 18, 0.4);
+}
+.btn-ghost:hover { border-color: var(--amber); color: var(--amber); }
+
+/* CEO 驾驶舱 mock */
+.cockpit {
+  margin-top: 56px;
+  max-width: 620px;
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--hairline);
+  padding: 18px 22px 20px;
+}
+.cockpit-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.cockpit-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--cyan);
+  box-shadow: 0 0 8px var(--cyan);
+}
+.cockpit-title {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--ink-2);
+}
+.cockpit-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+.cell { display: flex; flex-direction: column; gap: 2px; }
+.cell-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--ink-2);
+}
+.cell-value {
+  font-family: var(--mono);
+  font-size: 26px;
+  font-variant-numeric: tabular-nums;
+  color: var(--amber);
+  line-height: 1.2;
+}
+.cell-value small { font-size: 13px; }
+.cell-value.warn { color: var(--amber); }
+.cell-note { font-size: 11px; color: var(--ink-2); font-family: var(--mono); }
+.cell-note.danger { color: #ff7a6e; }
+
+/* 进入黑洞按钮 — hero 右下 */
+.hero-enter {
+  position: absolute;
+  right: 40px;
+  bottom: 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  text-decoration: none;
+  padding: 12px 18px;
+  border: 1px solid var(--hairline);
+  background: rgba(14, 16, 18, 0.4);
+  backdrop-filter: blur(8px);
+  transition: border-color 0.2s;
+}
+.hero-enter:hover { border-color: var(--amber); }
+.hero-enter-cn { color: var(--ink); font-size: 14px; }
+.hero-enter-en {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--amber);
+}
+
+/* ---------------- 内容区 ---------------- */
+.section {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 18vh 40px 0;
+}
+
+.section-title {
+  font-size: clamp(28px, 3.4vw, 44px);
+  line-height: 1.3;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.section-body {
+  max-width: 720px;
+  color: var(--ink-2);
+  font-size: 16px;
+}
+
+/* 我们是谁 — 事实条 */
+.about-facts {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--hairline);
+  border: 1px solid var(--hairline);
+  margin-bottom: 40px;
+}
+.fact {
+  background: var(--card);
+  backdrop-filter: blur(10px);
+  padding: 22px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.fact-num {
+  font-family: var(--mono);
+  font-size: 26px;
+  font-variant-numeric: tabular-nums;
+  color: var(--amber);
+}
+.fact-label { font-size: 13px; color: var(--ink-2); }
+
+/* 卡片网格 */
+.card-grid { display: grid; gap: 20px; }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+
+.card {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--hairline);
+  padding: 30px 26px;
+  transition: border-color 0.25s;
+}
+.card:hover { border-color: var(--amber); }
+.card h3 { font-size: 19px; margin: 14px 0 12px; }
+.card p { color: var(--ink-2); font-size: 14px; }
+.card-index {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--cyan);
+  letter-spacing: 0.12em;
+}
+.card-tag {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--cyan);
+  text-transform: uppercase;
+}
+
+/* 数据遥测 */
+.data-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px 32px;
+}
+.datum {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  /* 局部半透明底衬:黑洞背景会缓慢环绕,亮斑位置不固定,全局 scrim 无法保证对比 */
+  background: rgba(5, 6, 8, 0.38);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 10px;
+  padding: 20px 22px;
+}
+.datum-num {
+  font-family: var(--mono);
+  font-size: clamp(34px, 3.6vw, 52px);
+  font-variant-numeric: tabular-nums;
+  color: var(--amber);
+  line-height: 1.1;
+}
+.datum-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.datum-note { font-size: 13px; color: var(--ink-2); }
+
+/* 声音 — 引言 */
+.voice-list { display: flex; flex-direction: column; gap: 48px; }
+.voice {
+  border-left: 3px solid var(--amber);
+  padding: 18px 26px 18px 30px;
+  position: relative;
+  /* 引言会跨过盘体黑白边界,给局部底衬保证任意相机角度可读 */
+  background: rgba(5, 6, 8, 0.34);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 0 10px 10px 0;
+}
+.voice::before {
+  content: "“";
+  position: absolute;
+  left: 12px;
+  top: -34px;
+  font-size: 88px;
+  color: rgba(240, 163, 92, 0.28);
+  font-family: Georgia, serif;
+  pointer-events: none;
+}
+.voice-text { font-size: 19px; line-height: 1.9; max-width: 760px; }
+.voice-who {
+  margin-top: 14px;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: var(--cyan);
+}
+
+/* 洞察 — 列表式 */
+.insight-list { list-style: none; }
+.insight {
+  display: grid;
+  grid-template-columns: 110px 1fr auto;
+  align-items: baseline;
+  gap: 22px;
+  padding: 26px 4px;
+  border-top: 1px solid var(--hairline);
+}
+.insight:last-child { border-bottom: 1px solid var(--hairline); }
+.chip {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--cyan);
+  border: 1px solid rgba(44, 201, 255, 0.35);
+  padding: 4px 10px;
+  text-align: center;
+  white-space: nowrap;
+}
+.insight h3 { font-size: 18px; font-weight: 600; }
+.insight-meta {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--ink-2);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* 联系 */
+#contact .btn { margin-top: 30px; }
+
+/* ---------------- Footer ---------------- */
+.footer {
+  margin-top: 18vh;
+  border-top: 1px solid var(--hairline);
+  background: rgba(5, 6, 8, 0.82);
+  backdrop-filter: blur(12px);
+  padding: 48px 40px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: flex-start;
+}
+.footer-brand { display: flex; align-items: baseline; gap: 14px; }
+.footer-name { font-size: 17px; font-weight: 600; }
+.footer-tag { color: var(--ink-2); font-size: 13px; }
+.footer-contact { display: flex; gap: 26px; }
+.mono {
+  font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 13px;
+  color: var(--ink-2);
+  text-decoration: none;
+}
+a.mono:hover { color: var(--cyan); }
+.footer-copy { font-size: 12px; color: var(--ink-2); }
+
+/* ---------------- 移动端降级 ---------------- */
+@media (max-width: 768px) {
+  .nav { padding: 14px 20px; }
+  .nav-domain { display: none; }
+  .nav-links { gap: 16px; }
+  .nav-links a { font-size: 13px; }
+
+  .hero { padding: 0 20px; }
+  .section { padding: 14vh 20px 0; }
+
+  .grid-4, .grid-3, .data-grid, .about-facts,
+  .cockpit-grid { grid-template-columns: 1fr; }
+
+  .insight { grid-template-columns: 1fr; gap: 8px; }
+
+  .hero-enter { right: 20px; bottom: 20px; }
+  .cockpit-grid { gap: 18px; }
+}
+
+/* 窄屏降级策略:渲染器不识别 dprcap URL 参数,且仍s 目录按任务要求不随
+   站点分发(无静态图可用)。宽度 < 640px 时由 site.js 直接隐藏黑洞 iframe,
+   改以此纯 CSS 深空渐变 + 微光晕作为背景,零 GPU 开销。 */
+@media (max-width: 640px) {
+  body {
+    background:
+      radial-gradient(ellipse 120% 60% at 50% 30%, rgba(240, 163, 92, 0.10), transparent 60%),
+      radial-gradient(ellipse 80% 50% at 70% 60%, rgba(44, 201, 255, 0.05), transparent 65%),
+      var(--bg);
+  }
+}

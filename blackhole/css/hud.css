@@ -1,0 +1,250 @@
+/* Gargantua HUD — dark translucent panels, mono type, single cyan accent.
+   No external fonts or icon libraries. */
+
+:root {
+  --bg: rgba(14, 16, 18, 0.82);
+  --border: rgba(255, 255, 255, 0.08);
+  --fg: #e8e8e6;
+  --fg-dim: #9a9da3;
+  --accent: #2cc9ff;
+  --warn: #ff9d5c;
+  --mono: ui-monospace, "Cascadia Mono", Consolas, "SF Mono", monospace;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  overflow: hidden;
+}
+#view {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  background: #000;
+}
+
+/* ---------------------------------------------------------- structure */
+.hud-root {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  font-family: var(--mono);
+  color: var(--fg);
+  z-index: 10;
+}
+/* Chinese copy falls back to system CJK faces; numerals stay monospace.
+   No italics for CJK. */
+.hud-root.lang-zh {
+  font-family: ui-monospace, "Cascadia Mono", Consolas, "SF Mono",
+    "Microsoft YaHei", "PingFang SC", sans-serif;
+  font-style: normal;
+}
+.hud-root .panel {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  pointer-events: auto;
+}
+
+.hud-topleft {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 10px 12px;
+  max-width: 46vw;
+}
+.hud-title {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--fg);
+  white-space: nowrap;
+}
+.hud-stats {
+  margin-top: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+}
+.hud-stat {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--fg-dim);
+}
+.hud-accent { color: var(--accent); }
+.hud-warn { color: var(--warn); }
+
+.hud-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 6px 10px;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+}
+
+.hud-cine {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 260px;
+}
+.hud-phase {
+  flex: 1;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 1px;
+  overflow: hidden;
+}
+.hud-phase-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--accent);
+}
+
+/* ---------------------------------------------------------- param panel */
+.hud-panel {
+  position: absolute;
+  top: 52px;
+  right: 12px;
+  bottom: 52px;
+  width: 292px;
+  padding: 10px 12px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
+}
+.hud-heading {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--fg-dim);
+  margin: 12px 0 6px;
+}
+.hud-heading:first-child { margin-top: 0; }
+
+.hud-qrow {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.hud-btn {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--fg-dim);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+.hud-btn:hover { color: var(--fg); border-color: rgba(255, 255, 255, 0.25); }
+.hud-btn.active { color: var(--accent); border-color: var(--accent); }
+.hud-btn-accent { color: var(--accent); }
+.hud-lang-btn { padding: 1px 6px; font-size: 10px; }
+
+.hud-row {
+  display: grid;
+  grid-template-columns: 1fr 96px 56px;
+  align-items: center;
+  gap: 8px;
+  margin: 7px 0;
+}
+.hud-label {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--fg-dim);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.hud-value {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  color: var(--fg);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  text-align: right;
+  padding: 2px 4px;
+  width: 56px;
+}
+.hud-value.editing {
+  border-color: var(--accent);
+  outline: none;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* custom range slider */
+.hud-row input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 12px;
+  background: transparent;
+  cursor: pointer;
+  width: 96px;
+}
+.hud-row input[type="range"]::-webkit-slider-runnable-track {
+  height: 2px;
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 1px;
+}
+.hud-row input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+  margin-top: -5px;
+  border: none;
+}
+.hud-row input[type="range"]::-moz-range-track {
+  height: 2px;
+  background: rgba(255, 255, 255, 0.14);
+}
+.hud-row input[type="range"]::-moz-range-progress {
+  height: 2px;
+  background: var(--accent);
+}
+.hud-row input[type="range"]::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: none;
+}
+
+/* ---------------------------------------------------------- legend */
+.hud-legend {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  max-width: calc(100vw - 320px);
+  padding: 8px 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+}
+.hud-key-item { display: inline-flex; align-items: baseline; gap: 6px; }
+.hud-key {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+}
+.hud-key-desc {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--fg-dim);
+}

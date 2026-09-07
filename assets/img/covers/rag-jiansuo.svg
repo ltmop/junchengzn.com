@@ -1,17 +1,28 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420">
-  <rect width="800" height="420" fill="#f6f7f9"/>
-  <g fill="none" stroke="#e7e9ee" stroke-width="2"><path d="M0 300H800"/><path d="M0 340H800"/></g>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="420" viewBox="0 0 800 420">
+  <rect width="800" height="420" fill="#0a0d12"/>
+  <!-- 星野 -->
+  <g fill="#ffffff">
+    <circle cx="80" cy="55" r="1.4" opacity=".5"/><circle cx="170" cy="345" r="1" opacity=".3"/>
+    <circle cx="710" cy="65" r="1.6" opacity=".45"/><circle cx="650" cy="355" r="1" opacity=".3"/>
+    <circle cx="250" cy="42" r="1" opacity=".35"/><circle cx="530" cy="305" r="1.2" opacity=".3"/>
+    <circle cx="95" cy="190" r="1" opacity=".25"/><circle cx="745" cy="215" r="1.2" opacity=".35"/>
+  </g>
+  <g fill="none" stroke="rgba(255,255,255,.08)" stroke-width="2"><path d="M0 300H800"/><path d="M0 340H800"/></g>
   <g>
     <!-- 文档堆 -->
-    <rect x="200" y="80" width="120" height="160" rx="10" fill="#fff" stroke="#e7e9ee" stroke-width="2"/>
-    <rect x="280" y="120" width="120" height="160" rx="10" fill="#fff" stroke="#e7e9ee" stroke-width="2"/>
-    <rect x="360" y="160" width="120" height="160" rx="10" fill="#0b0d12"/>
-    <!-- 检索放大镜 + 箭头 -->
-    <g transform="translate(510,180)">
-      <circle cx="0" cy="0" r="40" fill="none" stroke="#0066F5" stroke-width="8"/>
-      <path d="M28 28 L60 60" stroke="#0066F5" stroke-width="10" stroke-linecap="round"/>
+    <rect x="200" y="80" width="120" height="160" rx="10" fill="#11151c" stroke="rgba(255,255,255,.12)" stroke-width="2"/>
+    <rect x="280" y="120" width="120" height="160" rx="10" fill="#11151c" stroke="rgba(255,255,255,.12)" stroke-width="2"/>
+    <!-- 命中的那篇:琥珀描边 -->
+    <rect x="360" y="160" width="120" height="160" rx="10" fill="#16110a" stroke="#f0a35c" stroke-width="2.5"/>
+    <g stroke="rgba(240,163,92,.65)" stroke-width="3" stroke-linecap="round">
+      <path d="M380 195 h80 M380 215 h80 M380 235 h52"/>
     </g>
-    <path d="M600 120 L656 146 L600 172" fill="none" stroke="#0066F5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-    <text x="400" y="316" text-anchor="middle" font-family="PingFang SC,Microsoft YaHei,sans-serif" font-size="17" fill="#8a8f98">700+ 篇笔记，RAG 让知识库可被提问</text>
+    <!-- 检索放大镜 -->
+    <g transform="translate(510,180)">
+      <circle cx="0" cy="0" r="40" fill="rgba(44,201,255,.06)" stroke="#2cc9ff" stroke-width="7"/>
+      <path d="M28 28 L60 60" stroke="#2cc9ff" stroke-width="9" stroke-linecap="round"/>
+    </g>
+    <path d="M600 120 L656 146 L600 172" fill="none" stroke="#f0a35c" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="400" y="316" text-anchor="middle" font-family="PingFang SC,Microsoft YaHei,sans-serif" font-size="17" fill="#9a9da3">700+ 篇笔记，RAG 让知识库可被提问</text>
   </g>
 </svg>
